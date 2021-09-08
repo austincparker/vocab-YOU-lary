@@ -4,6 +4,8 @@ import loginButton from '../components/loginButton';
 import firebaseConfig from '../../api/apiKeys';
 import startApp from '../views/startApp';
 import logoutButton from '../components/logoutButton';
+import clearDom from './clearDom';
+import welcomeMessage from '../views/welcome';
 
 const checkLoginStatus = () => {
   firebase.initializeApp(firebaseConfig);
@@ -14,6 +16,8 @@ const checkLoginStatus = () => {
       logoutButton();
     } else {
       // person is NOT logged in
+      clearDom();
+      welcomeMessage();
       loginButton();
     }
   });

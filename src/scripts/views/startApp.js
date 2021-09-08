@@ -1,4 +1,7 @@
+import domBuilder from '../events/domBuilder';
+
 const startApp = () => {
+  domBuilder();
   const domString = `<h1>TEST</h1>
     `;
 
