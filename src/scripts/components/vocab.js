@@ -2,6 +2,7 @@ import clearDom from '../helpers/clearDom';
 
 const showVocab = (array) => {
   clearDom();
+  document.querySelector('#form-container').innerHTML = '';
   array.forEach((item) => {
     document.querySelector('#vocab').innerHTML += `<div class ="card">
             <div class="card-body">
