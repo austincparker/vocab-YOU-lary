@@ -1,6 +1,5 @@
 const clearDom = () => {
-  document.querySelector('#vocab').innerHTML = '';
-  document.querySelector('#languages').innerHTML = '';
+  document.querySelector('#login-container').innerHTML = '';
 };
 
 export default clearDom;

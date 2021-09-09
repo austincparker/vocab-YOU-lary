@@ -1,14 +1,13 @@
+import navBar from '../components/navBar';
 import { showVocab } from '../components/vocab';
 import domBuilder from '../events/domBuilder';
+import clearDom from '../helpers/clearDom';
 import getVocab from '../helpers/data/vocabData';
 
 const startApp = () => {
+  clearDom();
   domBuilder();
-  const domString = `<h1>TEST</h1>
-    `;
-
-  document
-    .querySelector('#languages').innerHTML = domString;
+  navBar();
   getVocab().then((vocab) => showVocab(vocab));
 };
 
