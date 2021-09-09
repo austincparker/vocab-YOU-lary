@@ -19,6 +19,18 @@ const getVocab = () => new Promise((resolve, reject) => {
 
 // CREATE VOCAB
 
+const createVocab = (vocabObj) => new Promise((resolve, reject) => {
+  axios.post(`${dbUrl}/vocab.json`, vocabObj)
+    .then((response) => {
+      const body = { firebaseKey: response.data.name };
+
+      axios.patch(`${dbUrl}/vocab/${response.data.name}.json`, body)
+        .then(() => {
+          getVocab(vocabObj).then((vocabArray) => resolve(vocabArray));
+        });
+    }).catch((error) => reject(error));
+});
+
 // UPDATE VOCAB
 
-export default getVocab;
+export { getVocab, createVocab };

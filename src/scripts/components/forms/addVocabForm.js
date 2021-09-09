@@ -12,7 +12,7 @@ const addVocabForm = (obj = {}) => {
       </div>
       <div class="form-group">
         <label for="languages">Languages</label>
-        <textarea class="form-control" placeholder="Specify Associated Languages" id="description" style="height: 100px">${obj.tech || ''}</textarea>
+        <textarea class="form-control" placeholder="Specify Associated Languages" id="languages" style="height: 100px">${obj.tech || ''}</textarea>
       </div>
       <button type="submit" 
       id="${obj.firebaseKey ? `update-vocab--${obj.firebaseKey}` : 'submit-vocab'}"
