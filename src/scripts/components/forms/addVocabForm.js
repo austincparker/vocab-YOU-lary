@@ -1,7 +1,7 @@
 const addVocabForm = (obj = {}) => {
   document.querySelector('#vocab').innerHTML = '';
   document.querySelector('#form-container').innerHTML = `
-    <form id="submit-vocab-form" class="mb-4">
+    <form id="submit-vocab-form" class="mb-4 submit-vocab-form">
       <div class="form-group">
         <label for="title">Title</label>
         <input type="text" class="form-control" id="title" aria-describedby="vocabTitle" placeholder="Enter Entry Title" value="${obj.title || ''}" required>
@@ -16,7 +16,7 @@ const addVocabForm = (obj = {}) => {
       </div>
       <button type="submit" 
       id="${obj.firebaseKey ? `update-vocab--${obj.firebaseKey}` : 'submit-vocab'}"
-      class="btn btn-primary">Submit Entry</button>
+      class="btn btn-success">Submit Entry</button>
     </form>
     `;
 };

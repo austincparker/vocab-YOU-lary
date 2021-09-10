@@ -5,9 +5,10 @@ const showVocab = (array) => {
   document.querySelector('#form-container').innerHTML = '';
   document.querySelector('#vocab').innerHTML = '';
   array.forEach((item) => {
-    document.querySelector('#vocab').innerHTML += `<div class ="card">
+    document.querySelector('#vocab').innerHTML += `<div class="card">
             <div class="card-body">
-                <h5 class="card-title">${item.title}</h5>
+                <h4 class="card-title">${item.title}</h4>
+                <hr>
                 <p class="card-text">${item.description}</p>
                 <hr>
                 <p class="card-text">${item.tech}</p>
