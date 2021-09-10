@@ -1,6 +1,7 @@
 /* eslint-disable no-alert */
+import addVocabForm from '../components/forms/addVocabForm';
 import { showVocab } from '../components/vocab';
-import { createVocab, deleteVocab } from '../helpers/data/vocabData';
+import { createVocab, deleteVocab, getSingleVocab } from '../helpers/data/vocabData';
 
 const domEvents = () => {
   document.querySelector('#main-container').addEventListener('click', (e) => {
@@ -24,6 +25,8 @@ const domEvents = () => {
     // EDIT VOCAB
     if (e.target.id.includes('edit-vocab-btn')) {
       console.warn('you clicked edit');
+      const [, id] = e.target.id.split('--');
+      getSingleVocab(id).then((vocabObj) => addVocabForm(vocabObj));
     }
     // UPDATE VOCAB
     if (e.target.id.includes('update-vocab-btn')) {
