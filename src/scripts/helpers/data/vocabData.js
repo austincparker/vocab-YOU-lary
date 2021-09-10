@@ -23,8 +23,6 @@ const deleteVocab = (firebaseKey) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-// GET SINGLE VOCAB
-
 // CREATE VOCAB
 
 const createVocab = (vocabObj) => new Promise((resolve, reject) => {
@@ -41,4 +39,15 @@ const createVocab = (vocabObj) => new Promise((resolve, reject) => {
 
 // UPDATE VOCAB
 
-export { getVocab, createVocab, deleteVocab };
+const updateVocab = (vocabObj) => new Promise((resolve, reject) => {
+  axios.patch(`${dbUrl}/vocab/${vocabObj.firebaseKey}.json`, vocabObj)
+    .then(() => getVocab().then(resolve))
+    .catch(reject);
+});
+
+export {
+  getVocab,
+  createVocab,
+  deleteVocab,
+  updateVocab
+};

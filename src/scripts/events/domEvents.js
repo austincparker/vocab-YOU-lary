@@ -23,7 +23,20 @@ const domEvents = () => {
     }
     // EDIT VOCAB
     if (e.target.id.includes('edit-vocab-btn')) {
-      console.warn(`you have pressed the edit button for ${e.target.id}`);
+      console.warn('you clicked edit');
+    }
+    // UPDATE VOCAB
+    if (e.target.id.includes('update-vocab-btn')) {
+      // e.preventDefault();
+      // const [, firebaseKey] = e.target.id.split('--');
+      // const vocabObj = {
+      //   title: document.querySelector('#title').value,
+      //   description: document.querySelector('#description').value,
+      //   tech: document.querySelector('#languages').value,
+      //   firebaseKey
+      // };
+      // console.warn(vocabObj);
+      // updateVocab(vocabObj).then(showVocab);
     }
   });
 };
