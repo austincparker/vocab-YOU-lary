@@ -1,7 +1,12 @@
 /* eslint-disable no-alert */
 import addVocabForm from '../components/forms/addVocabForm';
 import { showVocab } from '../components/vocab';
-import { createVocab, deleteVocab, getSingleVocab } from '../helpers/data/vocabData';
+import {
+  createVocab,
+  deleteVocab,
+  getSingleVocab,
+  updateVocab
+} from '../helpers/data/vocabData';
 
 const domEvents = () => {
   document.querySelector('#main-container').addEventListener('click', (e) => {
@@ -29,17 +34,17 @@ const domEvents = () => {
       getSingleVocab(id).then((vocabObj) => addVocabForm(vocabObj));
     }
     // UPDATE VOCAB
-    if (e.target.id.includes('update-vocab-btn')) {
-      // e.preventDefault();
-      // const [, firebaseKey] = e.target.id.split('--');
-      // const vocabObj = {
-      //   title: document.querySelector('#title').value,
-      //   description: document.querySelector('#description').value,
-      //   tech: document.querySelector('#languages').value,
-      //   firebaseKey
-      // };
-      // console.warn(vocabObj);
-      // updateVocab(vocabObj).then(showVocab);
+    if (e.target.id.includes('update-vocab')) {
+      e.preventDefault();
+      const [, firebaseKey] = e.target.id.split('--');
+      const vocabObj = {
+        title: document.querySelector('#title').value,
+        description: document.querySelector('#description').value,
+        tech: document.querySelector('#languages').value,
+        firebaseKey
+      };
+      console.warn(vocabObj);
+      updateVocab(vocabObj).then(showVocab);
     }
   });
 };
