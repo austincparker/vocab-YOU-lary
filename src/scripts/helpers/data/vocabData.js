@@ -37,6 +37,14 @@ const createVocab = (vocabObj) => new Promise((resolve, reject) => {
     }).catch((error) => reject(error));
 });
 
+// GET SINGLE VOCAB
+
+const getSingleVocab = (firebaseKey) => new Promise((resolve, reject) => {
+  axios.get(`${dbUrl}/vocab/${firebaseKey}.json`)
+    .then((response) => resolve(response.data))
+    .catch(reject);
+});
+
 // UPDATE VOCAB
 
 const updateVocab = (vocabObj) => new Promise((resolve, reject) => {
@@ -49,5 +57,6 @@ export {
   getVocab,
   createVocab,
   deleteVocab,
+  getSingleVocab,
   updateVocab
 };
