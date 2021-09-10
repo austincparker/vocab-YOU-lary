@@ -3,8 +3,30 @@
 
 
 body {
-  background-color: antiquewhite;
-  color: brown;
+  background-color: rgb(175, 175, 175);
   text-align: center;
-  margin-top: 100px;
+}
+
+.vocab {
+  padding: 10px;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 300px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.nav-btn {
+  margin-right: 10px;
+}
+
+.submit-vocab-form {
+  margin: 10px auto;
+  width: 40%;
+}
+
+.submit-vocab-form div {
+  margin-bottom: 10px;
 }

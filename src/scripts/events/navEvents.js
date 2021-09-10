@@ -6,7 +6,7 @@ const navEvents = () => {
   document.querySelector('#add-vocab-btn').addEventListener('click', () => {
     addVocabForm();
   });
-  document.querySelector('#logo').addEventListener('click', () => {
+  document.querySelector('#home').addEventListener('click', () => {
     getVocab().then((vocab) => showVocab(vocab));
   });
 };
