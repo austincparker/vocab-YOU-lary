@@ -62,6 +62,7 @@ module.exports = {
       new CssMinimizerPlugin()
     ]
   },
+  devtool: "source-map",
   // Opens browser on run of npm start 
   devServer: {
     open: true
