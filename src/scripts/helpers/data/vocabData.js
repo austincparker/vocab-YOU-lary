@@ -77,8 +77,18 @@ const getHtmlVocab = () => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
+// GET REACT VOCAB
+
 const getReactVocab = () => new Promise((resolve, reject) => {
   axios.get(`${dbUrl}/vocab.json?orderBy="tech"&equalTo="React"`)
+    .then((response) => resolve(Object.values(response.data)))
+    .catch(reject);
+});
+
+// SORT BY OLDEST TO NEWEST
+
+const getOldVocab = () => new Promise((resolve, reject) => {
+  axios.get(`${dbUrl}/vocab.json?orderBy="timestamp"`)
     .then((response) => resolve(Object.values(response.data)))
     .catch(reject);
 });
@@ -92,5 +102,6 @@ export {
   getJsVocab,
   getCssVocab,
   getHtmlVocab,
-  getReactVocab
+  getReactVocab,
+  getOldVocab
 };

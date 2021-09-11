@@ -7,6 +7,7 @@ import {
   getCssVocab,
   getHtmlVocab,
   getJsVocab,
+  getOldVocab,
   getReactVocab,
   getSingleVocab,
   updateVocab
@@ -20,7 +21,8 @@ const domEvents = () => {
       const vocabObj = {
         title: document.querySelector('#title').value,
         description: document.querySelector('#description').value,
-        tech: document.querySelector('#languages').value
+        tech: document.querySelector('#languages').value,
+        timestamp: Date.now()
       };
       createVocab(vocabObj).then((vocabArray) => showVocab(vocabArray));
     }
@@ -66,6 +68,19 @@ const domEvents = () => {
     if (e.target.id.includes('react-btn')) {
       e.preventDefault();
       getReactVocab().then((vocabArray) => showVocab(vocabArray));
+    }
+    // SORT LINKS
+    if (e.target.id.includes('new-sort')) {
+      e.preventDefault();
+      getOldVocab().then((vocabArray) => showVocab(vocabArray.reverse()));
+    }
+    if (e.target.id.includes('old-sort')) {
+      e.preventDefault();
+      getOldVocab().then((vocabArray) => showVocab(vocabArray));
+    }
+    if (e.target.id.includes('alph-sort')) {
+      e.preventDefault();
+      console.warn('alph link clicked');
     }
   });
 };
