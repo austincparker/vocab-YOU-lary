@@ -53,10 +53,44 @@ const updateVocab = (vocabObj) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
+// GET JS VOCAB
+
+const getJsVocab = () => new Promise((resolve, reject) => {
+  axios.get(`${dbUrl}/vocab.json?orderBy="tech"&equalTo="Javascript"`)
+    .then((response) => resolve(Object.values(response.data)))
+    .catch(reject);
+});
+
+// GET CSS VOCAB
+
+const getCssVocab = () => new Promise((resolve, reject) => {
+  axios.get(`${dbUrl}/vocab.json?orderBy="tech"&equalTo="CSS"`)
+    .then((response) => resolve(Object.values(response.data)))
+    .catch(reject);
+});
+
+// GET HTML VOCAB
+
+const getHtmlVocab = () => new Promise((resolve, reject) => {
+  axios.get(`${dbUrl}/vocab.json?orderBy="tech"&equalTo="HTML"`)
+    .then((response) => resolve(Object.values(response.data)))
+    .catch(reject);
+});
+
+const getReactVocab = () => new Promise((resolve, reject) => {
+  axios.get(`${dbUrl}/vocab.json?orderBy="tech"&equalTo="React"`)
+    .then((response) => resolve(Object.values(response.data)))
+    .catch(reject);
+});
+
 export {
   getVocab,
   createVocab,
   deleteVocab,
   getSingleVocab,
-  updateVocab
+  updateVocab,
+  getJsVocab,
+  getCssVocab,
+  getHtmlVocab,
+  getReactVocab
 };
