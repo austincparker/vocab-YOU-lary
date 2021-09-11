@@ -3,6 +3,7 @@ const navBar = () => {
     <form class="container-fluid justify-content-start">
       <button id="home" class="btn btn-outline-secondary nav-btn" type="button">HOME</button>
       <button id="add-vocab-btn" class="btn btn-outline-success nav-btn" type="button">Create Entry</button>
+      <button id="filter-btn" class="btn btn-outline-dark nav-btn" type="button">Filter</button>
       <span id="logout-btn"></span>
     </form>
   </nav>`;

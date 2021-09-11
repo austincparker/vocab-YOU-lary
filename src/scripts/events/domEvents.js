@@ -46,6 +46,23 @@ const domEvents = () => {
       console.warn(vocabObj);
       updateVocab(vocabObj).then(showVocab);
     }
+    // FILTER LANGUAGES
+    if (e.target.id.includes('javascript-btn')) {
+      e.preventDefault();
+      console.warn('clicked js');
+    }
+    if (e.target.id.includes('css-btn')) {
+      e.preventDefault();
+      console.warn('clicked css');
+    }
+    if (e.target.id.includes('html-btn')) {
+      e.preventDefault();
+      console.warn('clicked html');
+    }
+    if (e.target.id.includes('react-btn')) {
+      e.preventDefault();
+      console.warn('clicked react');
+    }
   });
 };
 

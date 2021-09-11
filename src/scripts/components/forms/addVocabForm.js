@@ -1,4 +1,5 @@
 const addVocabForm = (obj = {}) => {
+  document.querySelector('#lang-container').innerHTML = '';
   document.querySelector('#vocab').innerHTML = '';
   document.querySelector('#form-container').innerHTML = `
     <form id="submit-vocab-form" class="mb-4 submit-vocab-form">
