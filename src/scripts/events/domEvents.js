@@ -4,6 +4,10 @@ import { showVocab } from '../components/vocab';
 import {
   createVocab,
   deleteVocab,
+  getCssVocab,
+  getHtmlVocab,
+  getJsVocab,
+  getReactVocab,
   getSingleVocab,
   updateVocab
 } from '../helpers/data/vocabData';
@@ -49,19 +53,19 @@ const domEvents = () => {
     // FILTER LANGUAGES
     if (e.target.id.includes('javascript-btn')) {
       e.preventDefault();
-      console.warn('clicked js');
+      getJsVocab().then((vocabArray) => showVocab(vocabArray));
     }
     if (e.target.id.includes('css-btn')) {
       e.preventDefault();
-      console.warn('clicked css');
+      getCssVocab().then((vocabArray) => showVocab(vocabArray));
     }
     if (e.target.id.includes('html-btn')) {
       e.preventDefault();
-      console.warn('clicked html');
+      getHtmlVocab().then((vocabArray) => showVocab(vocabArray));
     }
     if (e.target.id.includes('react-btn')) {
       e.preventDefault();
-      console.warn('clicked react');
+      getReactVocab().then((vocabArray) => showVocab(vocabArray));
     }
   });
 };
