@@ -10,6 +10,7 @@ import {
   getOldVocab,
   getReactVocab,
   getSingleVocab,
+  getVocab,
   updateVocab
 } from '../helpers/data/vocabData';
 
@@ -80,7 +81,7 @@ const domEvents = () => {
     }
     if (e.target.id.includes('alph-sort')) {
       e.preventDefault();
-      console.warn('alph link clicked');
+      getVocab().then((vocabArray) => showVocab(vocabArray.sort((a, b) => ((a.title.toUpperCase() > b.title.toUpperCase()) ? 1 : -1))));
     }
   });
 };
