@@ -3,7 +3,7 @@
 
 
 body {
-  background-color: rgb(175, 175, 175);
+  background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(216,216,231,1) 12%, rgba(134,134,207,1) 48%, rgba(184,213,219,1) 100%);
   text-align: center;
 }
 
@@ -16,6 +16,7 @@ body {
   width: 300px;
   margin-right: 10px;
   margin-bottom: 10px;
+  border-radius: 2rem;
 }
 
 .nav-btn {
