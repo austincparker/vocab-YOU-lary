@@ -15,5 +15,7 @@ The idea user is a web development student looking to expand his/her vocabulary.
 
 ## Project Screenshots
 
+![Uploading screenshot-acp-vocab-project.netlify.app-2021.10.21-10_40_57.png…]()
+
 ### Contributors
 Austin Parker https://github.com/austincparker
